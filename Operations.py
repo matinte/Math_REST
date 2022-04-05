@@ -78,7 +78,7 @@ class Operations:
         # check lists have the same size
         self.assertEqual(len(v1), len(v2))
         # create new suma list
-        v_mult = [None]*len(v1)
+        v_mult = [None] * len(v1)
         # iterate over elements
         for i, val in enumerate(v1):
             e1 = v1[i]
@@ -86,7 +86,30 @@ class Operations:
             # check elements are float type
             if not (isinstance(e1, float)) | (not isinstance(e2, float)):
                 raise TypeError("Elements not of Float type: ", e1, " - ", e2)
-            else: # then mult elements to result list
+            else:  # then mult elements to result list
                 v_mult[i] = e1 * e2;
         # return mult list
         return v_mult
+
+    def divis(self, v1, v2):
+        # check list v1 not empty
+        self.assertTrue(v1)
+        # check list v2 not empty
+        self.assertTrue(v2)
+        # check lists have the same size
+        self.assertEqual(len(v1), len(v2))
+        # create new suma list
+        v_divis = [None]*len(v1)
+        # iterate over elements
+        for i, val in enumerate(v1):
+            e1 = v1[i]
+            e2 = v2[i]
+            # check elements are float type
+            if not (isinstance(e1, float)) | (not isinstance(e2, float)):
+                raise TypeError("Elements not of Float type: ", e1, " - ", e2)
+            elif e2 == 0.0:
+                raise TypeError("Cant divide when e2 equals to 0", e1, " - ", e2)
+            else: # then divide elements to result list
+                v_divis[i] = e1 / e2;
+        # return mult list
+        return v_divis

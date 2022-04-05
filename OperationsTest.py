@@ -23,9 +23,10 @@ class Testing(unittest.TestCase):
         self.assertListEqual(v_mult, Operations.Operations.mult(self, v1, v2))
 
     def test_divis(self):
-        a = True
-        b = True
-        self.assertEqual(a, b)
+        v1 = [6.3, 2.2, 12.0]
+        v2 = [1.0, 2.0, 0.0]
+        v_divis = [6.3, 1.1, 4.0]
+        self.assertListEqual(v_divis, Operations.Operations.divis(self, v1, v2))
 
 
 if __name__ == '__main__':
