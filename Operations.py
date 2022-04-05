@@ -28,14 +28,65 @@ class Operations:
     def __init__(self):
         print("This is Constructor")
 
-    def suma(v1, v2, self):
+    def suma(self, v1, v2):
+        # check list v1 not empty
+        self.assertTrue(v1)
+        # check list v2 not empty
+        self.assertTrue(v2)
+        # check lists have the same size
         self.assertEqual(len(v1), len(v2))
-        # with self.assertRaises(TypeError):
-        #     "Result different than expected"
+        # create new suma list
         v_suma = [None]*len(v1)
+        # iterate over elements
         for i, val in enumerate(v1):
-             e1 = v1[i];
-             isinstance(e1, float)
-             e2 = v2[i];
-             v_suma[i] = e1 + e2;
+            e1 = v1[i]
+            e2 = v2[i]
+            # check elements are float type
+            if not (isinstance(e1, float)) | (not isinstance(e2, float)):
+                raise TypeError("Elements not of Float type: ", e1, " - ", e2)
+            else: # then sum elements to result list
+                v_suma[i] = e1 + e2;
+        # return suma list
         return v_suma
+
+    def resta(self, v1, v2):
+        # check list v1 not empty
+        self.assertTrue(v1)
+        # check list v2 not empty
+        self.assertTrue(v2)
+        # check lists have the same size
+        self.assertEqual(len(v1), len(v2))
+        # create new resta list
+        v_resta = [None]*len(v1)
+        # iterate over elements
+        for i, val in enumerate(v1):
+            e1 = v1[i]
+            e2 = v2[i]
+            # check elements are float type
+            if not (isinstance(e1, float)) | (not isinstance(e2, float)):
+                raise TypeError("Elements not of Float type: ", e1, " - ", e2)
+            else: # then resta elements to result list
+                v_resta[i] = e1 - e2;
+        # return suma list
+        return v_resta
+
+    def mult(self, v1, v2):
+        # check list v1 not empty
+        self.assertTrue(v1)
+        # check list v2 not empty
+        self.assertTrue(v2)
+        # check lists have the same size
+        self.assertEqual(len(v1), len(v2))
+        # create new suma list
+        v_mult = [None]*len(v1)
+        # iterate over elements
+        for i, val in enumerate(v1):
+            e1 = v1[i]
+            e2 = v2[i]
+            # check elements are float type
+            if not (isinstance(e1, float)) | (not isinstance(e2, float)):
+                raise TypeError("Elements not of Float type: ", e1, " - ", e2)
+            else: # then mult elements to result list
+                v_mult[i] = e1 * e2;
+        # return mult list
+        return v_mult
